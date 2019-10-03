@@ -1,0 +1,31 @@
+{
+  "name": "mern-app-backend",
+  "version": "0.1.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "webpack-dev-server --open",
+    "watch": "webpack --watch --hot --env dev",
+    "start:nodemon": "nodemon build/backend.bundle.js",
+    "build:dev": "webpack --env dev"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.6.2",
+    "@babel/node": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "babel-loader": "^8.0.6",
+    "nodemon": "^1.19.3",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
