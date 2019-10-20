@@ -7,8 +7,8 @@ import routes from './routes/index.js';
 
 dotenv.config();
 
-const dbString =
-    `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PSWD}@${process.env.DB_HOST}`;
+const app = express();
+const dbString = process.env.DB_HOST || '';
 const dbConfig = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -22,19 +22,16 @@ mongoose.connect(dbString, dbConfig)
         process.exit(1);
     });
 
-const app = express();
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// 404 Page not Found Error
+// This is a 404 error
 app.use((err, req, res, next) => {
     console.log(err.stack);
     res.status(400).send(`Error: ${res.originUrl} not found`);
     next();
 });
 
-// 500 Internal Server Error
 app.use((err, req, res, next) => {
     console.log(err.stack);
     res.status(500).send(`Internal server error: ${err}`);
