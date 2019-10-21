@@ -11,4 +11,4 @@ class Reservation extends React.Component{
         )
     }
 };
-render(<Reservation />);
+export default Reservation;
