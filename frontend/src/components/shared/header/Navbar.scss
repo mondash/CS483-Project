@@ -1,0 +1,19 @@
+.Navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: .5em;
+
+    .Nav {
+        color: white;
+        padding: .5em;
+        text-align: center;
+        text-decoration: none;
+        border-radius: .5em;
+
+        &:hover {
+            background-color: violet;
+            color: black;   
+        }
+    }
+}

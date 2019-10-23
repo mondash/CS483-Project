@@ -1,10 +1,10 @@
 import React from'react';
 import Layout from '../components/shared/Layout';
-class Home extends React.Component{
-    render() {
-        return(
+
+const Home = () => {
+    return(
         <Layout>
-            <img alt = 'swonder' src = "./swonderhome.png"/>
+            <img alt = 'swonder' src = "./swonderice.png"/>
             <h1>Welcome to Swonder!</h1>
             <br />
             <br />
@@ -18,7 +18,7 @@ class Home extends React.Component{
             Swonder is home to many user groups including Evansville Youth Hockey, Total Package Hockey, The Tri-State Adult Hockey Association, River City Ice Theatre and the Greater Evansville Figure Skating Club. Over the years many organizations including: the Evansville IceMen, The University of Southern Indiana Ice Eagles Hockey Team, the Roller Girls of Southern Indiana, and The Evansville Rage Arena Football have utilized the facility. Swonder has hosted the Deaconess Party of the Year, the YWCA Cake party, the American Diabetes Association Gala as well as other local formal events.
             </p>
         </Layout>
-        );
-    }
+    );
 };
+
 export default Home;

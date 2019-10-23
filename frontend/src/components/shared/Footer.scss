@@ -1,0 +1,18 @@
+.Footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-image: linear-gradient(magenta, purple);
+    padding: 1em;
+
+    span {
+        padding: 1em;
+        color: white;
+    }
+
+    a {
+        img {
+            width: 40px;
+        }
+    }
+}
