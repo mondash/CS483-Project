@@ -11,13 +11,13 @@ class Navbar extends React.Component{
         return(
             <div>
                 <nav>
-                    <ul>
-                        <li><Link to = "/" ><img src = {logoSrc} /></Link></li>
-                        <li><Link to = "/sessions" >Skating Sessions</Link></li>
-                        <li><Link to = "/fitness" >Fitness Center</Link></li>
-                        <li><Link to = "/reservation" >Reservations</Link></li>
-                        <li><Link to = "organizations" >Organizations</Link></li>
-                        <li><a target = "_blank" rel="noopener noreferrer" href = {mapSrc}>Directions</a></li>
+                    <ul className = "ul">
+                        <li className = "li"><Link to = "/" ><img src = {logoSrc} /></Link></li>
+                        <li className = "li"><Link to = "/sessions" >Skating Sessions</Link></li>
+                        <li className = "li"><Link to = "/fitness" >Fitness Center</Link></li>
+                        <li className = "li"><Link to = "/reservation" >Reservations</Link></li>
+                        <li className = "li"><Link to = "organizations" >Organizations</Link></li>
+                        <li className = "li"><a target = "_blank" rel="noopener noreferrer" href = {mapSrc}>Directions</a></li>
                     </ul>
                 </nav>
             </div>

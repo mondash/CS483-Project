@@ -1,3 +1,17 @@
 .col{
-    column-count: 3;
+    float: left;
+    width: 30%;
+    height: 300px;
+    display: inline-block;
+}
+.row:after{
+    content:"";
+    display: table;
+    clear:both;
+}
+.daycol{
+    float:left;
+    width: 10%;
+    height: 300px;
+    display: inline-block;
 }
