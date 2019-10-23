@@ -1,13 +1,12 @@
 import React from 'react';
-import Navbar from '../components/shared/Navbar';
+import Layout from '../components/shared/Layout';
 
 class Reservation extends React.Component{
     render(){
         return(
-            <div>
-                <Navbar />
+            <Layout>
                 <h1>Reservations</h1>
-            </div>
+            </Layout>
         )
     }
 };
