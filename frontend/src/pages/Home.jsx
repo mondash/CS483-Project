@@ -4,7 +4,7 @@ import Layout from '../components/shared/Layout';
 const Home = () => {
     return(
         <Layout>
-            <img alt = 'swonder' src = "./swonderice.png"/>
+            <img style={{width: "90%", maxWidth: "600px"}} alt = 'swonder' src = "./swonderice.png"/>
             <h1>Welcome to Swonder!</h1>
             <br />
             <br />

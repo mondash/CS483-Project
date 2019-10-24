@@ -8,7 +8,6 @@ import Navbar from './Navbar';
 const Header = () => { 
     return (
         <div className="Header">
-            <Link className="Nav" to = "/" ><img src="/favicon.ico" alt="Logo"/></Link>
             <Navbar />
         </div>
     );

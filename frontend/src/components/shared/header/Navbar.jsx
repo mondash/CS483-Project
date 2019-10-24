@@ -9,6 +9,7 @@ class Navbar extends React.Component{
 
         return(
             <nav className="Navbar">
+                <Link to = "/" ><img className="Logo" src="/favicon.ico" alt="Logo"/></Link>
                 <Link className="Nav" to = "/sessions" >Skating Sessions</Link>
                 <Link className="Nav" to = "/fitness" >Fitness Center</Link>
                 <Link className="Nav" to = "/reservation" >Reservations</Link>

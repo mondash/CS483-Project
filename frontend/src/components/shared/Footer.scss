@@ -2,17 +2,23 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-image: linear-gradient(magenta, purple);
+    background-image: linear-gradient(blueviolet, mediumorchid);
     padding: 1em;
+}
 
-    span {
-        padding: 1em;
-        color: white;
-    }
+.Info {
+    display: inline;
+    padding: 1em;
+    color: white;
+}
 
-    a {
-        img {
-            width: 40px;
-        }
-    }
+.Link {
+    display: inline;   
+}
+
+.Icon {
+    font-size: 2em;
+    display: inline;
+    padding: .5em;
+    color: white;
 }
