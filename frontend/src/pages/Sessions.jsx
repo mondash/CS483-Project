@@ -5,7 +5,29 @@ class Sessions extends React.Component{
     render(){
         return(
             <Layout>
-                <h1>Sessions</h1>
+        <h2>Pricing</h2>
+        <br />
+        <h3>Public Skating Price</h3>
+        <ul>
+            <li>16 and under Admission: $4.00</li>
+            <li>17 and over Admission: $6.00</li>
+            <li>Skate Rental: $3.00</li>
+        </ul>
+        <h3>Hockey Price</h3>
+        <ul>
+            <li>Stick Time: $7.00 (All ages welcome)</li>
+            <li>Stick Time Membership: $70.00 (12 Sessions for the price of 10)</li>
+            <li>Adult Stick 'n Puck: $12.00 (Ages 18 & up)</li>
+        </ul>
+        <h3>Figure Skating Price</h3>
+        <ul>
+            <li>All Freestyle and Move Sessions are $7.00</li>
+            <li>Freestyle Membership: $70.00 (12 sessions for the price of 10)</li>
+            <li>Freestyle Blue: Open to all skaters passed USFS Pre-Prelim FS test or higher.</li>
+            <li>Freestyle Green: Open to all skaters who have USFS Pre-Prelim moves but not FS</li>
+            <li>Freestyle Purple: Open to skaters who have not yet passed Pre-Prelim moves and to basic skills level skaters.</li>
+        </ul>
+                <h2>Sessions</h2>
                 <table className="SessionTable">
                     <thead>
                         <th></th>
@@ -16,74 +38,48 @@ class Sessions extends React.Component{
                     <tbody>
                         <tr>
                             <td>Sun</td>
-                            <td>My public sun time</td>
-                            <td></td>
+                            <td>12:00 PM - 3:00 PM</td>
+                            <td>2:00 PM - 3:00 PM</td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>Mon</td>
-                            <td></td>
-                            <td></td>
+                            <td>3:15 PM - 4:45 PM</td>
+                            <td>11:45 AM - 12:45 PM</td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>Tues</td>
-                            <td></td>
-                            <td></td>
+                            <td>10:00 AM - 12:00 PM</td>
+                            <td>5:45 AM - 6:45 AM<br />8:45 AM - 9:45 AM<br />2:00 PM - 3:00 PM<br />3:30 PM - 4:30 PM</td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>Wed</td>
-                            <td></td>
-                            <td></td>
+                            <td>6:30 PM - 8:00 PM (Family Night)</td>
+                            <td>5:34 AM - 6:45 AM<br />11:45 AM - 12:45 PM<br />2:00 PM - 3:00 PM<br />3:45 PM - 4:45 PM<br />4:45 PM - 5:45 PM</td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>Thurs</td>
-                            <td></td>
-                            <td></td>
+                            <td>10:00 AM - 12:00 PM <br />3:30 PM - 5:00 PM</td>
+                            <td>5:45 AM - 6:45 AM<br />8:45 AM - 9:45 AM<br />2:00 PM - 3:00 PM</td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>Fri</td>
-                            <td></td>
-                            <td></td>
+                            <td>7:00 PM - 10:00 PM</td>
+                            <td>11:45 AM - 12:45 PM<br />2:00 PM - 3:00 PM<br />3:15 PM - 4:15 PM<br />4:15 PM - 5:15 PM<br />5:30 PM - 6:30 PM</td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>Sat</td>
-                            <td></td>
-                            <td></td>
+                            <td>1:00 PM - 3:00 PM<br />8:00 PM - 10:00 PM (College Night)</td>
+                            <td>TBD</td>
                             <td></td>
                         </tr>
                     </tbody>  
                 </table>
-                    
-                {/* <th>Public</th>
-                <p>12:00 PM - 3:00 PM</p>
-                <p>3:15 PM - 4:45 PM</p>
-                <p>10:00 AM - 12:00 PM</p>
-                <p>6:00 PM - 8:00 PM (Family Night)</p>
-                <p>10:00 AM - 12:00 PM & 3:30 PM - 5:00 PM</p>
-                <p>7:00 PM - 10:00 PM</p>
-                <p>1:00 PM - 3:00 PM & 8:00 PM - 10:00 PM (College Night)</p>
-                <p>Hockey</p>
-                <p>Sun</p>
-                <p>Mon</p>
-                <p>Tues</p>
-                <p>Wed</p>
-                <p>Thurs</p>
-                <p>Fri</p>
-                <p>Sat</p>
-            
-                <p>Figure Skating</p>
-                <p>Sun</p>
-                <p>Mon</p>
-                <p>Tues</p>
-                <p>Wed</p>
-                <p>Thurs</p>
-                <p>Fri</p>
-                <p>Sat</p> */}
             </Layout>
         );
     }

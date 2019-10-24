@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/shared/Layout';
-import '../components/shared/Fitness.css'
+import '../components/shared/Fitness.scss'
 
 const Fitness = () => (
     <Layout>
