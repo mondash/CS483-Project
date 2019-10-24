@@ -1,0 +1,23 @@
+.Navbar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+.Nav {
+    color: white;
+    padding: .5em;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 1em;
+
+    &:hover {
+        background-image: linear-gradient(lightpink, salmon);
+        color: black;   
+    }
+}
+
+.Logo {
+    display: inline-block;
+    width: 200px;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../components/shared/Layout';
+
 import './Sessions.scss';
 class Sessions extends React.Component{
     render(){
@@ -84,4 +85,5 @@ class Sessions extends React.Component{
         );
     }
 };
+
 export default Sessions;
