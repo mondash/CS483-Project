@@ -1,0 +1,20 @@
+@import './Variables.scss';
+
+.Button {
+    padding: 1em;
+    border-radius: 1em;
+    background-image: linear-gradient(mediumorchid, blueviolet);
+    color: white;
+
+    &:hover {
+        background-image: linear-gradient($swonderTeal,$swonderBlue);
+        color: black;
+    }
+}
+
+.Icon {
+    font-size: 2em;
+    display: inline;
+    padding: .5em;
+    color: white;
+}

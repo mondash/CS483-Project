@@ -1,5 +1,6 @@
 .Layout {
     align-items: center;
+    background: black;
 }
 
 .Content {
@@ -7,4 +8,6 @@
     flex-direction: column;
     align-items: center;
     margin: 1em;
+    padding: 1em;
+    background: white;
 }

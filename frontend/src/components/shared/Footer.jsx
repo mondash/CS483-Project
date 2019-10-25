@@ -1,8 +1,10 @@
 import React from 'react';
+import swonderInfo from '../../swonderInfo.json';
 
 import './Footer.scss';
 
-const Footer = ({ info }) => {
+const Footer = () => {
+    const info = swonderInfo.footerInfo;
     return (
         <div className="Footer">
             <span className="Info">
