@@ -1,0 +1,22 @@
+.Layout {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+    background: gainsboro;
+}
+
+.Content {
+    width: 95%;
+    box-sizing: border-box;
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em;
+    padding: 1em;
+    background: whitesmoke;
+    border-radius: 1em;
+}

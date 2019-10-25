@@ -1,9 +1,11 @@
 import React from 'react';
-import swonderInfo from '../../swonderInfo.json';
+import FontAwesomeIcon from '../FontAwesomeIcon';
+
+import swonderInfo from 'Src/swonderInfo.json';
 
 import './Footer.scss';
 
-const Footer = () => {
+export default () => {
     const info = swonderInfo.footerInfo;
     return (
         <div className="Footer">
@@ -18,17 +20,15 @@ const Footer = () => {
             </span>
             <span className="Info">
                 <a className="Link" href={`mailto:${info.email}`} rel="noreferrer noopener">
-                    <span className="Icon fa fa-envelope" />
+                    <FontAwesomeIcon name="envelope" />
                 </a>
                 <a className="Link" href={info.facebook} target="_blank" rel="noreferrer noopener">
-                    <span className="Icon fa fa-facebook-square" />
+                    <FontAwesomeIcon name="facebook-square" />
                 </a>
                 <a className="Link" href={info.twitter} target="_blank" rel="noreferrer noopener">
-                    <span className="Icon fa fa-twitter-square" />
+                    <FontAwesomeIcon name="twitter-square" />
                 </a>
             </span>
         </div>
     );
 };
-
-export default Footer;

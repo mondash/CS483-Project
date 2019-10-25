@@ -1,8 +1,10 @@
 import React from 'react';
-import Layout from '../components/shared/Layout';
-import '../components/shared/Fitness.scss'
 
-const Fitness = () => (
+import Layout from 'Components/shared/Layout';
+
+import './Fitness.scss';
+
+export default () => (
     <Layout>
         <h1>Fitness</h1>
         <br />
@@ -20,6 +22,4 @@ const Fitness = () => (
             <li>Buy 4 months, get the 5th month FREE</li>
         </ul>
     </Layout>
-    );
-    
-    export default Fitness;
+);

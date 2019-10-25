@@ -1,16 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Navbar from '../Navbar';
 
 import './Header.scss';
 
-import Navbar from './Navbar';
-
-const Header = () => { 
+export default () => { 
     return (
         <div className="Header">
             <Navbar />
         </div>
     );
 };
-
-export default Header;

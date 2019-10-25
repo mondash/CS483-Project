@@ -2,14 +2,14 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
-import Home from './pages/Home';
-import About from './pages/About';
-import Sessions from './pages/Sessions';
-import Reservation from './pages/Reservation';
-import Organizations from './pages/Organizations';
-import Fitness from './pages/Fitness';
+import Home from 'Pages/Home';
+import About from 'Pages/About';
+import Sessions from 'Pages/Sessions';
+import Reservation from 'Pages/Reservation';
+import Organizations from 'Pages/Organizations';
+import Fitness from 'Pages/Fitness';
 
-class App extends React.Component {
+export default class App extends React.Component {
   constructor(props) {
     super(props);
 
@@ -33,5 +33,3 @@ class App extends React.Component {
     );
   }
 }
-
-export default App;
