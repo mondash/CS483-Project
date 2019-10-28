@@ -1,8 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 
-import * as db from './db';
-import routes from './routes/index.js';
+import db from './db';
+import routes from './routes';
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));

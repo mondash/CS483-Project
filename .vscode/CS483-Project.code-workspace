@@ -1,21 +1,41 @@
 {
-	"folders": [
-		{
-			"path": ".."
-		}
-	],
-	"settings": {
-		"eslint.autoFixOnSave": true,
-		"eslint.alwaysShowStatus": true,
-		"git.autofetch": true,
-		"prettier.singleQuote": true,
-		"prettier.tabWidth": 4,
-		"todo-tree.general.tags": [
-			"TODO",
-			"FIXME",
-			"DEBUG",
-			"HACK",
-			"QUESTION"
-		]
+  "folders": [
+    {
+		"name": "Project",
+      	"path": ".."
+	},
+	{
+		"name": "Frontend",
+		"path": "../frontend"
+	},
+	{
+		"name": "Backend",
+		"path": "../backend"
 	}
+  ],
+  "extensions": {
+    "recommendations": [
+      "formulahendry.auto-close-tag",
+      "formulahendry.auto-rename-tag",
+      "mikestead.dotenv",
+      "dbaeumer.vscode-eslint",
+      "ms-vsliveshare.vsliveshare",
+      "christian-kohler.path-intellisense",
+      "esbenp.prettier-vscode",
+      "humao.rest-client",
+      "gruntfuggly.todo-tree",
+      "naumovs.color-highlight"
+    ]
+  },
+  "settings": {
+    "eslint.autoFixOnSave": true,
+    "eslint.alwaysShowStatus": true,
+    "git.autofetch": true,
+    "prettier.singleQuote": true,
+    "prettier.tabWidth": 4,
+	"todo-tree.general.tags": ["TODO", "FIXME", "DEBUG", "HACK", "QUESTION"],
+    "prettier.endOfLine": "lf",
+    "prettier.printWidth": 100,
+    "prettier.requireConfig": true
+  }
 }
