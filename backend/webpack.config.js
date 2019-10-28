@@ -7,9 +7,6 @@ module.exports = (env) => {
         target: 'node',
         entry: './src/server.js',
         devtool: 'inline-source-map',
-        devServer: {
-            contentBase: './build',
-        },
         output: {
             path: path.resolve(__dirname, './build'),
             filename: 'backend.bundle.js',

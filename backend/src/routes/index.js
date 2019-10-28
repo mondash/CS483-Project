@@ -1,12 +1,22 @@
-import * as notebook from '../controllers/notebook.controller';
+import express from 'express';
 
-export default app => {
-    app.route('/notes')
-        .get(notebook.getAllNotes)
-        .post(notebook.createNote);
-    
-    app.route('/notes/:noteId')
-        .get(notebook.getNote)
-        .put(notebook.updateNote)
-        .delete(notebook.deleteNote);
-}
+import * as users from '../controllers/user.controller';
+
+const router = express.Router();
+
+router.use((req, res, next) => {
+    console.log("My Router Middleware");
+    next();
+});
+
+router.route('/users')
+    .get(users.getAllUsers)
+    .post(users.createUser);
+
+router.route('/users/:id')
+    .all(users.findUser)
+    .get(users.getUser)
+    .patch(users.updateUser)
+    .delete(users.deleteUser);
+
+export default router;

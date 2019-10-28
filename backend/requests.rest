@@ -1,0 +1,22 @@
+GET http://localhost:3000/users
+
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "name": "My User",
+    "email": "email@web.com",
+    "password": "password1"
+}
+
+###
+GET http://localhost:3000/users/5db63430f65b015578f9c792
+
+###
+PATCH http://localhost:3000/users/5db63430f65b015578f9c792
+Content-Type: application/json
+
+{
+    "name": "Your Boi"
+}
