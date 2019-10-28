@@ -11,7 +11,7 @@ export const getAllUsers = async (req, res) => {
 
 export const getUser = (req, res) => {
     res.json(res.user);
-}
+};
 
 export const updateUser = async (req, res) => {
     if (req.body.name) {
