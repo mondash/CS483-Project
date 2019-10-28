@@ -1,12 +1,14 @@
-import * as notebook from '../controllers/notebook.controller';
+import express from 'express';
 
-export default app => {
-    app.route('/notes')
-        .get(notebook.getAllNotes)
-        .post(notebook.createNote);
-    
-    app.route('/notes/:noteId')
-        .get(notebook.getNote)
-        .put(notebook.updateNote)
-        .delete(notebook.deleteNote);
-}
+import userRoutes from './user.routes';
+
+const router = express.Router();
+
+router.use((req, res, next) => {
+    console.log('My Router Middleware');
+    next();
+});
+
+router.use('/users', userRoutes);
+
+export default router;
