@@ -6,7 +6,7 @@ const dbConfig = {
     useUnifiedTopology: true
 };
 
-export const connect = () => {
+const connect = () => {
     mongoose
         .connect(dbString, dbConfig)
         .then(() => console.log('Connected to database'))
@@ -15,4 +15,8 @@ export const connect = () => {
             console.log(err.stack);
             process.exit(1);
         });
+};
+
+export default {
+    connect
 };
