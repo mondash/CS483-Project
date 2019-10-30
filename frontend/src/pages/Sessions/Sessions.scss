@@ -1,19 +1,16 @@
 .SessionTable {
-    
     thead {
         font-size: 1.5em;
         font-weight: bold;
 
         th {
             padding: 1em;
-        }   
+        }
     }
 
     tbody {
-        
         tr {
-
-            td{
+            td {
                 padding: 1em;
 
                 &:first-child {
@@ -25,8 +22,7 @@
     }
 }
 
-.nodot{
+.nodot {
     text-decoration: none;
     list-style-type: none;
 }
-

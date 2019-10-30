@@ -3,7 +3,8 @@ import mongoose from 'mongoose';
 const dbString = process.env.DB_HOST;
 const dbConfig = {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true
 };
 
 const connect = () => {

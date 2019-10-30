@@ -17,11 +17,11 @@
 .Link {
     display: inline-block;
     padding: 1em;
-    
+
     .FontAwesomeIcon {
         transition: 300ms all;
         transform: scale(1.5);
-     
+
         &:hover {
             transform: scale(2);
         }

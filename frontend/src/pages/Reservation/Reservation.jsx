@@ -3,7 +3,7 @@ import Layout from 'Components/shared/Layout';
 import Button from 'Components/shared/Button';
 
 export default () => {
-    return(
+    return (
         <Layout>
             <h1>Reservations</h1>
             <table>

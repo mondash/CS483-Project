@@ -3,7 +3,7 @@ import Navbar from '../Navbar';
 
 import './Header.scss';
 
-export default () => { 
+export default () => {
     return (
         <div className="Header">
             <Navbar />

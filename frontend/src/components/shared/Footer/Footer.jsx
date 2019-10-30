@@ -9,15 +9,9 @@ export default () => {
     const info = swonderInfo.footerInfo;
     return (
         <div className="Footer">
-            <span className="Info">
-               Phone: {info.phone}
-            </span>
-            <span className="Info">
-                Address: {info.address}
-            </span>
-            <span className="Info">
-                Fax: {info.fax}
-            </span>
+            <span className="Info">Phone: {info.phone}</span>
+            <span className="Info">Address: {info.address}</span>
+            <span className="Info">Fax: {info.fax}</span>
             <span className="Info">
                 <a className="Link" href={`mailto:${info.email}`} rel="noreferrer noopener">
                     <FontAwesomeIcon name="envelope" />

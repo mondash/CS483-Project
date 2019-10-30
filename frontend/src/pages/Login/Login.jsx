@@ -4,6 +4,6 @@ import Layout from 'Components/shared/Layout';
 
 export default () => (
     <Layout>
-        <h1>About Page</h1>
+        <span className="LoginPanel">Login</span>
     </Layout>
 );
