@@ -8,6 +8,8 @@ import Sessions from 'Pages/Sessions';
 import Reservation from 'Pages/Reservation';
 import Organizations from 'Pages/Organizations';
 import Fitness from 'Pages/Fitness';
+import Login from 'Pages/Login';
+import Registration from 'Pages/Registration';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -28,6 +30,8 @@ export default class App extends React.Component {
             <Route path = "/fitness" component = {Fitness} />
             <Route path = "/sessions" component = {Sessions} />
             <Route path = "/reservation" component = {Reservation} />
+            <Route path = "/login" component  = {Login}/>
+            <Route path = "/registration" component = {Registration} />
           </Switch>
       </div>
     );

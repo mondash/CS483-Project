@@ -5,7 +5,12 @@
     flex-direction: column;
     justify-content: stretch;
     align-items: center;
-    background: gainsboro;
+    //background: gainsboro;
+    background-color: black;
+    background-image: url("/background.png");
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .Content {
