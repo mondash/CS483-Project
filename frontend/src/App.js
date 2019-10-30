@@ -2,7 +2,16 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
-import { Home, About, Sessions, Reservation, Organizations, Fitness } from './pages';
+import {
+    Home,
+    About,
+    Sessions,
+    Reservation,
+    Organizations,
+    Fitness,
+    Login,
+    Registration
+} from './pages';
 
 export default class App extends React.Component {
     constructor(props) {
@@ -21,6 +30,8 @@ export default class App extends React.Component {
                     <Route path="/fitness" component={Fitness} />
                     <Route path="/sessions" component={Sessions} />
                     <Route path="/reservation" component={Reservation} />
+                    <Route path="/login" component={Login} />
+                    <Route path="/registration" component={Registration} />
                 </Switch>
             </div>
         );

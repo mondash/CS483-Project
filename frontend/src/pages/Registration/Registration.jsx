@@ -1,9 +1,8 @@
 import React from 'react';
 import Layout from 'Components/shared/Layout';
-import { Link } from 'react-router-dom';
-import './Login.scss';
+import './Registration.scss';
 
-class Login extends React.Component {
+class Registration extends React.Component {
     constructor(props) {
         super(props);
         this.state = { value: '' };
@@ -22,7 +21,7 @@ class Login extends React.Component {
     render() {
         return (
             <Layout>
-                <h1>Login</h1>
+                <h1>Register</h1>
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         <span>Username:</span>
@@ -32,11 +31,18 @@ class Login extends React.Component {
                         <span>Password:</span>
                         <input type="password" name="password" />
                     </label>
+                    <label>
+                        <span>Retype Password:</span>
+                        <input type="password" name="password-check" />
+                    </label>
+                    <label>
+                        <span>Email:</span>
+                        <input type="email" name="email" />
+                    </label>
                     <input type="submit" />
                 </form>
-                <Link to="/registration">Sign Up Here</Link>
             </Layout>
         );
     }
 }
-export default Login;
+export default Registration;

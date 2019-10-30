@@ -27,6 +27,9 @@ export default () => {
             <a className="Nav" target="_blank" rel="noopener noreferrer" href={mapSrc}>
                 Directions
             </a>
+            <Link className="Nav" to="/Login">
+                Login/Sign Up
+            </Link>
         </nav>
     );
 };
