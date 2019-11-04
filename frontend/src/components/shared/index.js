@@ -5,11 +5,4 @@ import Layout from './Layout';
 import MenuItem from './MenuItem';
 import Navbar from './Navbar';
 
-export default {
-    Button,
-    FontAwesomeIcon,
-    Footer,
-    Layout,
-    MenuItem,
-    Navbar
-};
+export { Button, FontAwesomeIcon, Footer, Layout, MenuItem, Navbar };

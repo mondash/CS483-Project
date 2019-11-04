@@ -4,14 +4,7 @@ import Home from './Home';
 import Login from './Login';
 import Organizations from './Organizations';
 import Reservation from './Reservation';
+import Registration from './Registration';
 import Sessions from './Sessions';
 
-export default {
-    About,
-    Fitness,
-    Home,
-    Login,
-    Organizations,
-    Reservation,
-    Sessions
-};
+export { About, Fitness, Home, Login, Organizations, Reservation, Registration, Sessions };
