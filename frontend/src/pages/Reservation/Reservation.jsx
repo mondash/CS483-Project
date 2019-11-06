@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from 'Components/shared/Layout';
 import Button from 'Components/shared/Button';
+import { Link } from 'react-router-dom';
 
 export default () => {
     return (
@@ -30,7 +31,9 @@ export default () => {
             <br />
             <br />
             <br />
-            <Button name="Click here to Reserve" />
+            <Link to="/resform">
+                <Button name="Click here to Reserve" />
+            </Link>
         </Layout>
     );
 };
