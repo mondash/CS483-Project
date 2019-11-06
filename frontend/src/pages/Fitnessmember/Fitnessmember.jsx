@@ -44,17 +44,6 @@ class Fitnessmember extends React.Component {
                         <input type="text" name="cardname" />
                     </label>
                     <label>
-<<<<<<< HEAD
-                        <span>Street Address:</span>
-                        <input type="text" name="address" />
-                    </label>
-                    <label>
-                        <span>CVV:</span>
-                        <input type="text" name="cvv" maxlength="3" />
-                    </label>
-                    <label>
-=======
->>>>>>> 7d93d7a837befc0c05fbb7f5901b2cc89695c78d
                         <span>Card Number:</span>
                         <input type="text" name="cardnum" maxlength="16" />
                     </label>
@@ -64,9 +53,6 @@ class Fitnessmember extends React.Component {
                     </label>
                     <label>
                         <span>CVV:</span>
-<<<<<<< HEAD
-                        <input type="text" name="cvv" maxlength="3" />
-=======
                         <input type="number" name="cvv" min="100" max="999" />
                     </label>
                     <h2>Billing Address</h2>
@@ -85,7 +71,6 @@ class Fitnessmember extends React.Component {
                     <label>
                         <span>ZIP:</span>
                         <input type="text" name="zip" maxlength="5" />
->>>>>>> 7d93d7a837befc0c05fbb7f5901b2cc89695c78d
                     </label>
                     <input type="submit" />
                 </form>
