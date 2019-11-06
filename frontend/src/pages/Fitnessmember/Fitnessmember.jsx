@@ -38,13 +38,30 @@ class Fitnessmember extends React.Component {
                         <span>Phone number:</span>
                         <input type="number" name="phoneNum" />
                     </label>
+                    <h1>Billing Info</h1>
+                    <label>
+                        <span>Name on Card:</span>
+                        <input type="text" name="cardname" />
+                    </label>
+                    <label>
+                        <span>Street Address:</span>
+                        <input type="text" name="address" />
+                    </label>
+                    <label>
+                        <span>CVV:</span>
+                        <input type="text" name="cvv" maxlength="3" />
+                    </label>
                     <label>
                         <span>Card Number:</span>
-                        <input type="number" name="cardnum" min="16" max="16" />
+                        <input type="text" name="cardnum" maxlength="16" />
                     </label>
                     <label>
                         <span>Expiration Date:</span>
                         <input type="month" name="expMonth" min="2019-11" max="2025-12" />
+                    </label>
+                    <label>
+                        <span>CVV:</span>
+                        <input type="text" name="cvv" maxlength="3" />
                     </label>
                     <input type="submit" />
                 </form>
