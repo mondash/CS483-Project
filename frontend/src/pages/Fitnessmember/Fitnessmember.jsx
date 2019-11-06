@@ -39,12 +39,12 @@ class Fitnessmember extends React.Component {
                         <input type="number" name="phoneNum" />
                     </label>
                     <label>
-                        <span>Reservation Day:</span>
-                        <input type="date" name="resdate" />
+                        <span>Card Number:</span>
+                        <input type="number" name="cardnum" min="16" max="16" />
                     </label>
                     <label>
-                        <span>Time of Day:</span>
-                        <input type="time" name="restime" />
+                        <span>Expiration Date:</span>
+                        <input type="month" name="expMonth" min="2019-11" max="2025-12" />
                     </label>
                     <input type="submit" />
                 </form>
