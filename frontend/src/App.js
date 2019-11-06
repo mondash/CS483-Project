@@ -10,7 +10,9 @@ import {
     Organizations,
     Fitness,
     Login,
-    Registration
+    Registration,
+    Resform,
+    Fitnessmember
 } from './pages';
 
 export default class App extends React.Component {
@@ -32,6 +34,8 @@ export default class App extends React.Component {
                     <Route path="/reservation" component={Reservation} />
                     <Route path="/login" component={Login} />
                     <Route path="/registration" component={Registration} />
+                    <Route path="/resform" component={Resform} />
+                    <Route path="/fitnessmember" component={Fitnessmember} />
                 </Switch>
             </div>
         );
