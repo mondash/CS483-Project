@@ -6,7 +6,7 @@ import './Sessions.scss';
 export default () => {
     return (
         <Layout>
-            <h2>Pricing</h2>
+            <h1>Pricing</h1>
             <br />
             <h3>Public Skating Price</h3>
             <ul className="nodot">
@@ -35,7 +35,7 @@ export default () => {
                     to basic skills level skaters.
                 </li>
             </ul>
-            <h2>Sessions</h2>
+            <h1>Sessions</h1>
             <table className="SessionTable">
                 <thead>
                     <tr>

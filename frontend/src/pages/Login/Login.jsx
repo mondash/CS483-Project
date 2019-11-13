@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from 'Components/shared/Layout';
 import { Link } from 'react-router-dom';
 import './Login.scss';
+import Button from 'Components/shared/Button';
 
 class Login extends React.Component {
     constructor(props) {
@@ -22,15 +23,21 @@ class Login extends React.Component {
             <Layout>
                 <h1>Login</h1>
                 <form onSubmit={this.handleSubmit}>
-                    <span>Username:</span>
-                    <input type="text" name="name" />
-
-                    <span>Password:</span>
-                    <input type="password" name="password" />
-
-                    <input type="submit" />
+                    <span className="Entry">
+                        Username:
+                        <input type="text" name="name" />
+                    </span>
+                    <br />
+                    <span className="Entry">
+                        Password:
+                        <input type="password" name="password" />
+                    </span>
+                    <input className="Submit" type="submit" />
                 </form>
-                <Link to="/registration">Sign Up Here</Link>
+
+                <Link to="/registration">
+                    <Button name="Click to Register" />
+                </Link>
             </Layout>
         );
     }
