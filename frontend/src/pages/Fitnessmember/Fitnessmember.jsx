@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from 'Components/shared/Layout';
+import './Fitnessmember.scss';
 
 class Fitnessmember extends React.Component {
     constructor(props) {
@@ -40,10 +41,6 @@ class Fitnessmember extends React.Component {
                     </label>
                     <h1>Billing Info</h1>
                     <label>
-                        <span>Name on Card:</span>
-                        <input type="text" name="cardname" />
-                    </label>
-                    <label>
                         <span>Card Number:</span>
                         <input type="text" name="cardnum" maxlength="16" />
                     </label>
@@ -56,6 +53,10 @@ class Fitnessmember extends React.Component {
                         <input type="number" name="cvv" min="100" max="999" />
                     </label>
                     <h2>Billing Address</h2>
+                    <label>
+                        <span>Name on Card:</span>
+                        <input type="text" name="cardname" />
+                    </label>
                     <label>
                         <span>Street Address:</span>
                         <input type="text" name="streetadd" />

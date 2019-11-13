@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from 'Components/shared/Layout';
 import { Link } from 'react-router-dom';
+import Button from 'Components/shared/Button';
 import './Login.scss';
 
 class Login extends React.Component {
@@ -30,7 +31,12 @@ class Login extends React.Component {
 
                     <input type="submit" />
                 </form>
-                <Link to="/registration">Sign Up Here</Link>
+                <br />
+                <br />
+                <br />
+                <Link to="/registration">
+                    <Button name="Click to Register" />
+                </Link>
             </Layout>
         );
     }

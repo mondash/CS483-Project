@@ -23,6 +23,7 @@ export default () => (
             <li>Buy 4 months, get the 5th month FREE</li>
         </ul>
         <br />
+        <br />
         <Link to="/fitnessmember">
             <Button name="Click to Become a Member" />
         </Link>
