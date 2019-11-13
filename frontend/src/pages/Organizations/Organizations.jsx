@@ -5,7 +5,7 @@ import './Organizations.scss';
 export default () => {
     return (
         <Layout>
-            <h1>Organization</h1>
+            <h1>Organizations</h1>
             <h3>
                 FOR INFORMATION ON OUR USER GROUPS AND THE PROGRAMMING THEY OFFER, CLICK ON THE
                 CORRESPONDING LOGOS!
