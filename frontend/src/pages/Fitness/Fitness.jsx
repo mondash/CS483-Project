@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
+import Button from 'Components/shared/Button';
 import Layout from 'Components/shared/Layout';
 
 import './Fitness.scss';
@@ -21,5 +22,9 @@ export default () => (
             <li>$3.00 per day</li>
             <li>Buy 4 months, get the 5th month FREE</li>
         </ul>
+        <br />
+        <Link to="/fitnessmember">
+            <Button name="Click to Become a Member" />
+        </Link>
     </Layout>
 );

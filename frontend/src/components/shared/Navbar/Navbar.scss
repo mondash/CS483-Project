@@ -12,6 +12,7 @@
     text-align: center;
     text-decoration: none;
     border-radius: 1em;
+    transition: 200ms all;
 
     &:hover {
         background-image: linear-gradient($swonderTeal, $swonderBlue);

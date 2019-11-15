@@ -5,12 +5,13 @@
     flex-direction: column;
     justify-content: stretch;
     align-items: center;
+    background-image: linear-gradient(black, gray, black);
     //background: gainsboro;
-    background-color: black;
-    background-image: url('/background.png');
-    background-position: left;
-    background-size: cover;
-    background-repeat: no-repeat;
+//     background-color: black;
+//     background-image: url('/background.png');
+//     background-position: left;
+//     background-size: cover;
+//     background-repeat: no-repeat;
 }
 
 .Content {
