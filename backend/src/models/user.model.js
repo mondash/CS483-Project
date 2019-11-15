@@ -20,4 +20,15 @@ const userSchema = new Schema({
     }
 });
 
+// eslint-disable-next-line func-names
+userSchema.pre('save', function(next) {
+    const user = this;
+    if (user.isModified('password')) {
+        // TODO hash password
+        const hash = user.password;
+        user.password = hash;
+    }
+    return next();
+});
+
 export default mongoose.model('User', userSchema);
