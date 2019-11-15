@@ -1,6 +1,7 @@
 @import '../Variables.scss';
 
 .Button {
+    display: inline-block;
     padding: 1em;
     border-radius: 1em;
     background-image: linear-gradient(mediumorchid, blueviolet);

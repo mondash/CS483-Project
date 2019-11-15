@@ -1,4 +1,29 @@
 .logo{
+    display: inline-block;
     width: 200px;
     height:200px;
+}
+
+.GridContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    //display: grid;
+    //grid-column-gap: 1em;
+    //grid-template-columns: auto auto auto;
+
+}
+
+.GridElement {
+    display: inline-block;
+    max-width: 18em;
+    padding: 1em .5em;
+    margin: 2em;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: .4em;;
+        p {
+            display: inline-block;
+            vertical-align: bottom;
+        }
 }
