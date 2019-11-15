@@ -14,7 +14,7 @@ export default () => {
                 <tr>
                     <td>
                         <a href="https://www.gefsc.com/">
-                            <img className="logo" src="./GEFSC.png" alt="GEFSC" />
+                            <img className="logo" src="./GEFSC.jpg" alt="GEFSC" />
                         </a>
                         <p>
                             Learn to Skate classes for <br />
