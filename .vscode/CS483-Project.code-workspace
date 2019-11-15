@@ -1,17 +1,17 @@
 {
   "folders": [
     {
-		"name": "Project",
-      	"path": ".."
-	},
-	{
-		"name": "Frontend",
-		"path": "../frontend"
-	},
-	{
-		"name": "Backend",
-		"path": "../backend"
-	}
+      "name": "Project",
+      "path": ".."
+    },
+    {
+      "name": "Frontend",
+      "path": "../frontend"
+    },
+    {
+      "name": "Backend",
+      "path": "../backend"
+    }
   ],
   "extensions": {
     "recommendations": [
@@ -31,12 +31,7 @@
     "eslint.autoFixOnSave": true,
     "eslint.alwaysShowStatus": true,
     "git.autofetch": true,
-    "prettier.singleQuote": true,
-    "prettier.tabWidth": 4,
-	"todo-tree.general.tags": ["TODO", "FIXME", "DEBUG", "HACK", "QUESTION"],
-    "prettier.endOfLine": "lf",
-    "prettier.printWidth": 100,
-    "prettier.requireConfig": true,
+    "todo-tree.general.tags": ["TODO", "FIXME", "DEBUG", "HACK", "QUESTION"],
     "files.eol": "\n"
   }
 }
