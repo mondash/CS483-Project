@@ -9,3 +9,4 @@ text=auto
 *.png binary
 *.jpg binary
 *.jpeg binary
+*.ico binary
