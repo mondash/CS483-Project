@@ -6,15 +6,22 @@ const login = (req, res) => {
         email,
         password
     }; // TODO get user
-    const accessToken = jwt.sign(user, process.env.Access_TOKEN_SECRET);
+    const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
     res.json(accessToken);
+};
+
+const register = (req, res) => {
+    const { email, password } = req.body;
+
+    // create user
+
+    // get refresh token
+    // get auth token\
 };
 
 const logout = (req, res) => {};
 
-const register = (req, res) => {};
-
-const authenticate = (req, res, next) => {
+const authenticate = async (req, res, next) => {
     const authHeader = req.headers.authorization;
     const token = authHeader && authHeader.split(' ')[1];
     if (!token) return res.status(401);

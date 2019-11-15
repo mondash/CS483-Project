@@ -1,19 +1,21 @@
+import jwt from 'jsonwebtoken';
+
 import User from '../models/user.model';
 
 const getAllUsers = async (req, res) => {
     try {
         const users = await User.find();
-        res.json(users);
+        return res.json(users);
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        return res.status(500).json({ message: error.message });
     }
 };
 
 const getUser = (req, res) => {
-    res.json(res.user);
+    return res.status(200).json(req.user);
 };
 
-const createUser = async (req, res) => {
+const createUser = async (req, res, next) => {
     const user = new User({
         name: req.body.name,
         email: req.body.email,
@@ -21,53 +23,93 @@ const createUser = async (req, res) => {
     });
     try {
         const newUser = await user.save();
-        res.status(201).json(newUser);
+        res.user = newUser;
+        return next();
     } catch (error) {
-        console.log(error);
-        res.status(400).json({ message: error.message });
+        return res.status(400).json({ message: error.message });
     }
 };
 
 const deleteUser = async (req, res) => {
     try {
         await res.user.remove();
-        res.json({ message: 'Successfully deleted user' });
+        return res.json({ message: 'Successfully deleted user' });
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        return res.status(500).json({ message: error.message });
     }
 };
 
 const updateUser = async (req, res) => {
     if (req.body.name) {
-        res.user.name = req.body.name;
+        req.user.name = req.body.name;
     }
     if (req.body.email) {
-        res.user.email = req.body.email;
+        req.user.email = req.body.email;
     }
     if (req.body.password) {
-        res.user.password = req.body.password;
+        req.user.password = req.body.password;
     }
     try {
-        const updatedUser = await res.user.save();
-        res.json(updatedUser);
+        const updatedUser = await req.user.save();
+        return res.status(200).json(updatedUser);
     } catch (error) {
-        res.status(400).json({ message: error.message });
+        return res.status(400).json({ message: error.message });
     }
 };
 
-const findUser = async (req, res, next) => {
+const findUserById = async (req, res, next) => {
     let user;
     try {
-        user = await User.findById(req.params.id);
+        user = await User.findById(req.payload.id);
         if (!user) {
-            return res.status(404).json({ message: 'Cannot find user' });
+            return res.status(404).json({ message: 'Cannot find user with specified id' });
         }
     } catch (error) {
         return res.status(500).json({ message: error.message });
     }
-
-    res.user = user;
+    req.user = user;
     return next();
+};
+
+const findUserByEmailPassword = async (req, res, next) => {
+    let user;
+    try {
+        // TODO compare password with hash
+        user = await User.findOne({ email: req.body.email, password: req.body.password });
+        if (!user) {
+            return res
+                .status(404)
+                .json({ message: 'Cannot find user with specified email and password' });
+        }
+    } catch (error) {
+        return res.status(500).json({ message: error.message });
+    }
+    req.user = user;
+    return next();
+};
+
+const authenticate = async (req, res, next) => {
+    const authHeader = req.headers.authorization;
+    const token = authHeader && authHeader.split(' ')[1];
+    if (!token) return res.status(401).json({ message: 'No token provided' });
+
+    return jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {
+        if (err) return res.status(403).json({ message: err.message });
+        req.payload = payload;
+        return next();
+    });
+};
+
+const createToken = (req, res, next) => {
+    // eslint-disable-next-line no-underscore-dangle
+    const token = jwt.sign({ id: req.user._id }, process.env.ACCESS_TOKEN_SECRET);
+
+    req.token = token;
+    return next();
+};
+
+const login = (req, res) => {
+    return res.status(200).json({ message: 'Login successful ', token: req.token });
 };
 
 export default {
@@ -76,5 +118,9 @@ export default {
     createUser,
     deleteUser,
     updateUser,
-    findUser
+    findUserById,
+    findUserByEmailPassword,
+    authenticate,
+    createToken,
+    login
 };
