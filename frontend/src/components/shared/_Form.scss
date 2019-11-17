@@ -1,0 +1,56 @@
+@import './Variables';
+
+form {
+    padding: 2em;
+    color: whitesmoke;
+    background-image: radial-gradient(circle, $brandPurple 20%, $brandBlue, $brandGreen);
+    border: 2px outset rgba(255, 255, 255, 0.2);
+    border-radius: 1em;
+
+    input {
+        display: block;
+        margin: 0.5em auto;
+        padding: 1em;
+        width: 20em;
+        color: black;
+        background: rgba(255, 255, 255, 0.4);
+        outline: none;
+        border: 2px inset rgba(255, 255, 255, 0.2);
+        border-radius: 2em;
+        text-align: center;
+        transition: 500ms all;
+
+        &::placeholder {
+            color: rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    button {
+        display: block;
+        margin: 2em auto 0;
+        padding: 1em;
+        width: 12em;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: whitesmoke;
+        background: rgba(255, 255, 255, 0.4);
+        outline: none;
+        border: 2px outset rgba(255, 255, 255, 0.2);
+        border-radius: 2em;
+        transition: 500ms all;
+        cursor: pointer;
+
+        &:hover {
+            color: black;
+            background: rgba(255, 255, 255, 0.6);
+        }
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    div {
+        margin-top: 1.5em;
+    }
+}

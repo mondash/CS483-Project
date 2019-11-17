@@ -26,14 +26,14 @@ const createUser = async (req, res, next) => {
         req.user = newUser;
         return next();
     } catch (error) {
-        return res.status(400).json({ message: error.message });
+        return res.status(400).json({ error });
     }
 };
 
 const deleteUser = async (req, res) => {
     try {
-        await res.user.remove();
-        return res.json({ message: 'Successfully deleted user' });
+        await req.user.remove();
+        return res.status(200).json({ message: 'Successfully deleted user' });
     } catch (error) {
         return res.status(500).json({ message: error.message });
     }

@@ -1,6 +1,9 @@
+@import '../Variables.scss';
+
 .Header {
+    padding: 1em;
     width: 100%;
     box-sizing: border-box;
-    padding: 1em;
-    background-image: linear-gradient(mediumorchid, blueviolet);
+    background-image: radial-gradient(circle, $brandPurple 20%, $brandBlue, $brandGreen);
+    border: 2px outset rgba(255, 255, 255, 0.2);
 }

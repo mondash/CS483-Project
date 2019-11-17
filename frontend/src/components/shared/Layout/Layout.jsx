@@ -7,7 +7,7 @@ import './Layout.scss';
 export default ({ children }) => (
     <div className="Layout">
         <Header />
-        <div className="Container">
+        <div className="Body">
             <div className="Content">{children}</div>
         </div>
         <Footer />

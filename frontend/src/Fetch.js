@@ -10,7 +10,7 @@ export default async (method, url, headers, body) => {
             body: JSON.stringify(body)
         });
         const data = await response.json();
-        return { success: 1, data };
+        return { success: 1, status: response.status, ...data };
     } catch (error) {
         return { success: 0, message: error.message };
     }

@@ -13,7 +13,7 @@ import {
     Registration,
     Resform,
     Fitnessmember
-} from './pages';
+} from 'Components/pages';
 
 export default class App extends React.Component {
     constructor(props) {
@@ -33,7 +33,7 @@ export default class App extends React.Component {
                     <Route path="/sessions" component={Sessions} />
                     <Route path="/reservation" component={Reservation} />
                     <Route path="/login" component={Login} />
-                    <Route path="/registration" component={Registration} />
+                    <Route path="/register" component={Registration} />
                     <Route path="/resform" component={Resform} />
                     <Route path="/fitnessmember" component={Fitnessmember} />
                 </Switch>

@@ -2,25 +2,37 @@
 
 .Navbar {
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
-    justify-content: space-around;
-}
+    justify-content: space-between;
 
-.Nav {
-    color: white;
-    padding: 0.5em;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 1em;
-    transition: 200ms all;
+    .Container {
+        display: flex;
+        justify-content: space-around;
+        align-items: stretch;
 
-    &:hover {
-        background-image: linear-gradient($swonderTeal, $swonderBlue);
-        color: black;
+        .Nav {
+            display: flex;
+            align-items: center;
+            margin: 0 0.5em;
+            padding: 0.5em;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            background: rgba(255, 255, 255, 0.4);
+            border: 2px outset rgba(255, 255, 255, 0.2);
+            border-radius: 1em;
+            transition: 500ms all;
+
+            &:hover {
+                color: black;
+                background: rgba(255, 255, 255, 0.6);
+            }
+        }
     }
-}
 
-.Logo {
-    display: inline-block;
-    width: 150px;
+    .Logo {
+        display: inline-block;
+        width: 150px;
+    }
 }
