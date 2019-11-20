@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Button from 'Components/shared/Button';
-import Layout from 'Components/shared/Layout';
+import { Button, Layout } from 'Shared';
 
 import './Fitness.scss';
 

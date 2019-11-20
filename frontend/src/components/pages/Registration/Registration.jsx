@@ -1,9 +1,24 @@
 import React from 'react';
-import Layout from 'Components/shared/Layout';
+import { Link, Redirect } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import './Registration.scss';
 
-import fetch from 'Src/Fetch';
-import { Link } from 'react-router-dom';
+import { Layout } from 'Shared';
+import { auth } from '../../../actions';
+import fetch from 'Src/Fetch'; // TODO make action
+
+const mapStateToProps = state => ({
+    ...state.auth
+});
+
+const mapDispatchToProps = dispatch =>
+    bindActionCreators(
+        {
+            ...auth
+        },
+        dispatch
+    );
 
 class Registration extends React.Component {
     constructor(props) {
@@ -12,7 +27,9 @@ class Registration extends React.Component {
             name: null,
             email: null,
             password: null,
-            passwordCheck: null
+            passwordCheck: null,
+            errorMessage: null,
+            registerSuccess: false
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -28,6 +45,7 @@ class Registration extends React.Component {
     async handleSubmit(event) {
         event.preventDefault();
         // TODO validations
+        const { authenticate } = this.props;
         const { name, email, password, passwordCheck } = this.state;
         const payload = {
             name,
@@ -35,11 +53,20 @@ class Registration extends React.Component {
             password,
             passwordCheck
         };
-        const response = await fetch('POST', 'http://localhost:3300/users/register', null, payload);
-        console.log(response);
+        const response = await fetch('POST', '/users/register', null, payload);
+
+        if (response.ok && response.status === 200) {
+            authenticate(response.accessToken);
+        }
     }
 
     render() {
+        // TODO display error message
+        const { isAuthenticated } = this.props;
+        const { errorMessage } = this.state;
+
+        if (isAuthenticated) return <Redirect to="/" />;
+
         return (
             <Layout>
                 <form onSubmit={this.handleSubmit}>
@@ -75,7 +102,7 @@ class Registration extends React.Component {
                     <button>Register</button>
                     <div>
                         <hr />
-                        or
+                        <span>or</span>
                         <hr />
                     </div>
                     <Link to="/login">
@@ -86,4 +113,7 @@ class Registration extends React.Component {
         );
     }
 }
-export default Registration;
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Registration);

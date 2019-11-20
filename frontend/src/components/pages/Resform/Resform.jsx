@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from 'Components/shared/Layout';
+import { Layout } from 'Shared';
 
 class Resform extends React.Component {
     constructor(props) {
@@ -9,14 +9,17 @@ class Resform extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
     handleChange(event) {
         this.setState({ value: event.target.value });
     }
+
     handleSubmit(event) {
         console.log('A name was submitted: ' + event.target.name.value);
         console.log('A password was submitted: ' + event.target.password.value);
         event.preventDefault();
     }
+
     render() {
         return (
             <Layout>
@@ -52,4 +55,5 @@ class Resform extends React.Component {
         );
     }
 }
+
 export default Resform;

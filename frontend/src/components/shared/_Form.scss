@@ -1,4 +1,4 @@
-@import './Variables';
+@import '~Shared/Variables';
 
 form {
     padding: 2em;
@@ -51,6 +51,15 @@ form {
     }
 
     div {
+        display: flex;
         margin-top: 1.5em;
+
+        span {
+            margin: 0 1em;
+        }
+
+        hr {
+            flex: auto;
+        }
     }
 }

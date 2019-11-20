@@ -1,5 +1,6 @@
 import React from 'react';
-import FontAwesomeIcon from '../FontAwesomeIcon';
+
+import { FontAwesomeIcon } from 'Shared';
 
 import './Button.scss';
 

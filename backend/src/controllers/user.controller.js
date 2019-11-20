@@ -109,7 +109,7 @@ const createToken = (req, res, next) => {
 };
 
 const login = (req, res) => {
-    return res.status(200).json({ message: 'Login successful ', token: req.token });
+    return res.status(200).json({ message: 'Login successful', token: req.token });
 };
 
 export default {

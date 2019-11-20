@@ -1,5 +1,5 @@
 import React from 'react';
-import FontAwesomeIcon from '../FontAwesomeIcon';
+import { FontAwesomeIcon } from 'Shared';
 
 import swonderInfo from 'Src/swonderInfo.json';
 
@@ -7,6 +7,7 @@ import './Footer.scss';
 
 export default () => {
     const info = swonderInfo.footerInfo;
+
     return (
         <div className="Footer">
             <span className="Info">Phone: {info.phone}</span>

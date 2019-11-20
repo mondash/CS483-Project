@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Layout } from 'Components/shared';
+import { Layout } from 'Shared';
 
 export default () => (
     <Layout>

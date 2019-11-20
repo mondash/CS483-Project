@@ -1,7 +1,7 @@
 import React from 'react';
-import Layout from 'Components/shared/Layout';
-import Button from 'Components/shared/Button';
 import { Link } from 'react-router-dom';
+
+import { Layout, Button } from 'Shared';
 
 export default () => {
     return (

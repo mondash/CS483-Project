@@ -1,16 +1,33 @@
 import React from 'react';
-import Layout from 'Components/shared/Layout';
+import { Link, Redirect } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { auth } from 'Actions';
 import './Login.scss';
 
 import fetch from 'Src/Fetch';
-import { Link } from 'react-router-dom';
+import { Layout } from 'Shared';
+
+const mapStateToProps = state => ({
+    ...state.auth
+});
+
+const mapDispatchToProps = dispatch =>
+    bindActionCreators(
+        {
+            ...auth
+        },
+        dispatch
+    );
 
 class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             email: null,
-            password: null
+            password: null,
+            errorMessage: null,
+            loginSuccess: false
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -25,16 +42,30 @@ class Login extends React.Component {
 
     async handleSubmit(event) {
         event.preventDefault();
+        const { authenticate } = this.props;
         const { email, password } = this.state;
         const payload = {
             email,
             password
         };
-        const response = await fetch('POST', 'http://localhost:3300/users/login', null, payload);
+        const response = await fetch('POST', '/users/login', null, payload);
         console.log(response);
+
+        if (response.ok && response.status === 200) {
+            authenticate(response.token);
+            this.setState({ loginSuccess: true });
+        }
     }
 
     render() {
+        const { isAuthenticated, accessToken } = this.props;
+        const { errorMessage } = this.state;
+
+        console.log(isAuthenticated);
+        console.log(accessToken);
+
+        if (isAuthenticated) return <Redirect to="/" />;
+
         return (
             <Layout>
                 <form onSubmit={this.handleSubmit}>
@@ -56,7 +87,7 @@ class Login extends React.Component {
                     <button>Login</button>
                     <div>
                         <hr />
-                        or
+                        <span>or</span>
                         <hr />
                     </div>
                     <Link to="/register">
@@ -68,4 +99,7 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Login);

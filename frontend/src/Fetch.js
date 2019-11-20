@@ -1,7 +1,9 @@
-// TODO test, figure out url
-export default async (method, url, headers, body) => {
+// TODO add URL domain to all requests
+const domain = 'http://localhost:3300';
+
+export default async (method, route, headers, body) => {
     try {
-        const response = await fetch(url, {
+        const response = await fetch(`${domain}${route}`, {
             method,
             headers: {
                 'Content-Type': 'application/json',
@@ -10,8 +12,9 @@ export default async (method, url, headers, body) => {
             body: JSON.stringify(body)
         });
         const data = await response.json();
-        return { success: 1, status: response.status, ...data };
+
+        return { ok: 1, status: response.status, ...data };
     } catch (error) {
-        return { success: 0, message: error.message };
+        return { ok: 0, message: error.message };
     }
 };

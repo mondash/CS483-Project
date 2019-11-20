@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import swonderInfo from 'Src/swonderInfo.json';
+
 import './Navbar.scss';
+
+import swonderInfo from 'Src/swonderInfo.json';
 
 export default () => {
     return (

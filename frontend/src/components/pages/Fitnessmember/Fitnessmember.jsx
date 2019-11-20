@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from 'Components/shared/Layout';
+import { Layout } from 'Shared';
 
 class Fitnessmember extends React.Component {
     constructor(props) {
@@ -9,9 +9,11 @@ class Fitnessmember extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
     handleChange(event) {
         this.setState({ value: event.target.value });
     }
+
     handleSubmit(event) {
         //console.log('A name was submitted: ' + event.target.name.value);
         //console.log('A password was submitted: ' + event.target.password.value);
@@ -25,6 +27,7 @@ class Fitnessmember extends React.Component {
         }
         event.preventDefault();
     }
+
     render() {
         return (
             <Layout>
@@ -85,4 +88,5 @@ class Fitnessmember extends React.Component {
         );
     }
 }
+
 export default Fitnessmember;
