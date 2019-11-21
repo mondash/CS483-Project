@@ -12,7 +12,7 @@ const getAllUsers = async (req, res) => {
 };
 
 const getUser = (req, res) => {
-    return res.status(200).json(req.user);
+    return res.status(200).json({ info: req.user });
 };
 
 const createUser = async (req, res, next) => {
@@ -89,8 +89,7 @@ const findUserByEmailPassword = async (req, res, next) => {
 };
 
 const authenticate = async (req, res, next) => {
-    const authHeader = req.headers.authorization;
-    const token = authHeader && authHeader.split(' ')[1];
+    const token = req.headers.authorization;
     if (!token) return res.status(401).json({ message: 'No token provided' });
 
     return jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {

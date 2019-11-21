@@ -23,7 +23,7 @@ export default () => (
         </ul>
         <br />
         <Link to="/fitnessmember">
-            <Button name="Click to Become a Member" />
+            <Button name="Become a Member" />
         </Link>
     </Layout>
 );

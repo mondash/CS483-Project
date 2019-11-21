@@ -8,6 +8,7 @@ import Registration from './Registration';
 import Sessions from './Sessions';
 import Resform from './Resform';
 import Fitnessmember from './Fitnessmember';
+import AccountInfo from './AccountInfo';
 
 export {
     About,
@@ -19,5 +20,6 @@ export {
     Registration,
     Sessions,
     Resform,
-    Fitnessmember
+    Fitnessmember,
+    AccountInfo
 };

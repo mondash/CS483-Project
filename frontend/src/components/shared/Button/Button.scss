@@ -3,12 +3,13 @@
 .Button {
     display: inline-block;
     padding: 1em;
-    border-radius: 1em;
-    background-image: linear-gradient(mediumorchid, blueviolet);
     color: white;
+    background-image: radial-gradient(circle, $brandPurple 20%, $brandBlue, $brandGreen);
+    border: 2px outset rgba(255, 255, 255, 0.2);
+    border-radius: 1em;
+    transition: 500ms all;
 
     &:hover {
-        background-image: linear-gradient($swonderTeal, $swonderBlue);
         color: black;
     }
 }

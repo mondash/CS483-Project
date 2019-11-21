@@ -2,20 +2,19 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { user } from 'Actions';
 import './Registration.scss';
 
 import { Layout } from 'Shared';
-import { auth } from '../../../actions';
-import fetch from 'Src/Fetch'; // TODO make action
 
 const mapStateToProps = state => ({
-    ...state.auth
+    ...state.user
 });
 
 const mapDispatchToProps = dispatch =>
     bindActionCreators(
         {
-            ...auth
+            ...user
         },
         dispatch
     );
@@ -27,9 +26,7 @@ class Registration extends React.Component {
             name: null,
             email: null,
             password: null,
-            passwordCheck: null,
-            errorMessage: null,
-            registerSuccess: false
+            passwordCheck: null
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -44,8 +41,9 @@ class Registration extends React.Component {
 
     async handleSubmit(event) {
         event.preventDefault();
+
         // TODO validations
-        const { authenticate } = this.props;
+        const { register } = this.props;
         const { name, email, password, passwordCheck } = this.state;
         const payload = {
             name,
@@ -53,17 +51,12 @@ class Registration extends React.Component {
             password,
             passwordCheck
         };
-        const response = await fetch('POST', '/users/register', null, payload);
 
-        if (response.ok && response.status === 200) {
-            authenticate(response.accessToken);
-        }
+        register(payload);
     }
 
     render() {
-        // TODO display error message
-        const { isAuthenticated } = this.props;
-        const { errorMessage } = this.state;
+        const { error, isAuthenticated } = this.props;
 
         if (isAuthenticated) return <Redirect to="/" />;
 
@@ -99,8 +92,9 @@ class Registration extends React.Component {
                         required
                         onChange={this.handleChange}
                     />
+                    <div className="error">{error}</div>
                     <button>Register</button>
-                    <div>
+                    <div className="separator">
                         <hr />
                         <span>or</span>
                         <hr />

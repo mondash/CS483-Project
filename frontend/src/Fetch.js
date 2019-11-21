@@ -1,20 +1,21 @@
 // TODO add URL domain to all requests
 const domain = 'http://localhost:3300';
 
-export default async (method, route, headers, body) => {
+export default async (method, route, body, headers = {}) => {
     try {
+        const requestBody = body ? JSON.stringify(body) : null;
         const response = await fetch(`${domain}${route}`, {
             method,
             headers: {
                 'Content-Type': 'application/json',
                 ...headers
             },
-            body: JSON.stringify(body)
+            body: requestBody
         });
         const data = await response.json();
 
-        return { ok: 1, status: response.status, ...data };
+        return { ok: true, status: response.status, ...data };
     } catch (error) {
-        return { ok: 0, message: error.message };
+        return { ok: false, message: error.message };
     }
 };

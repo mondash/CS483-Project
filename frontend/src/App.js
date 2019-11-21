@@ -2,8 +2,9 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 import reducers from 'Reducers';
 
 import 'font-awesome/css/font-awesome.min.css';
@@ -19,7 +20,8 @@ import {
     Login,
     Registration,
     Resform,
-    Fitnessmember
+    Fitnessmember,
+    AccountInfo
 } from 'Pages';
 
 export default class App extends React.Component {
@@ -27,7 +29,7 @@ export default class App extends React.Component {
         super(props);
 
         this.state = {
-            store: createStore(reducers)
+            store: createStore(reducers, applyMiddleware(thunk))
         };
     }
 
@@ -48,6 +50,7 @@ export default class App extends React.Component {
                             <Route path="/register" component={Registration} />
                             <Route path="/resform" component={Resform} />
                             <Route path="/fitnessmember" component={Fitnessmember} />
+                            <Route path="/account" component={AccountInfo} />
                             <Route path="/" component={Home} />
                         </Switch>
                     </Router>

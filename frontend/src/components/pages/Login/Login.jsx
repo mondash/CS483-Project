@@ -2,20 +2,19 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { auth } from 'Actions';
+import { user } from 'Actions';
 import './Login.scss';
 
-import fetch from 'Src/Fetch';
 import { Layout } from 'Shared';
 
 const mapStateToProps = state => ({
-    ...state.auth
+    ...state.user
 });
 
 const mapDispatchToProps = dispatch =>
     bindActionCreators(
         {
-            ...auth
+            ...user
         },
         dispatch
     );
@@ -25,9 +24,7 @@ class Login extends React.Component {
         super(props);
         this.state = {
             email: null,
-            password: null,
-            errorMessage: null,
-            loginSuccess: false
+            password: null
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -42,27 +39,19 @@ class Login extends React.Component {
 
     async handleSubmit(event) {
         event.preventDefault();
-        const { authenticate } = this.props;
+
+        const { login } = this.props;
         const { email, password } = this.state;
         const payload = {
             email,
             password
         };
-        const response = await fetch('POST', '/users/login', null, payload);
-        console.log(response);
 
-        if (response.ok && response.status === 200) {
-            authenticate(response.token);
-            this.setState({ loginSuccess: true });
-        }
+        login(payload);
     }
 
     render() {
-        const { isAuthenticated, accessToken } = this.props;
-        const { errorMessage } = this.state;
-
-        console.log(isAuthenticated);
-        console.log(accessToken);
+        const { error, isAuthenticated } = this.props;
 
         if (isAuthenticated) return <Redirect to="/" />;
 
@@ -84,8 +73,9 @@ class Login extends React.Component {
                         required
                         onChange={this.handleChange}
                     />
+                    <div className="error">{error}</div>
                     <button>Login</button>
-                    <div>
+                    <div className="separator">
                         <hr />
                         <span>or</span>
                         <hr />
