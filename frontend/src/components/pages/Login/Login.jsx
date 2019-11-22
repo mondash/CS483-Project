@@ -37,7 +37,7 @@ class Login extends React.Component {
         });
     }
 
-    async handleSubmit(event) {
+    handleSubmit(event) {
         event.preventDefault();
 
         const { login } = this.props;

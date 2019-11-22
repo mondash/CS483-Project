@@ -130,4 +130,48 @@ const getInfo = () => {
     };
 };
 
-export { login, register, logout, getInfo };
+const updateInfoInit = () => ({
+    type: 'UPDATE_INFO_INIT'
+});
+
+const updateInfoSuccess = info => ({
+    type: 'UPDATE_INFO_SUCCESS',
+    info
+});
+
+const updateInfoFailure = error => ({
+    type: 'UPDATE_INFO_FAILURE',
+    error
+});
+
+const updateInfo = payload => {
+    return async (dispatch, getState) => {
+        dispatch(updateInfoInit);
+
+        try {
+            const accessToken = getState().user.accessToken;
+
+            const response = await fetch('PATCH', '/users/info', payload, {
+                Authorization: accessToken
+            });
+
+            if (!response.ok) {
+                throw new Error('Could not connect to server');
+            }
+
+            if (response.status === 500) {
+                throw new Error('Internal server error');
+            }
+
+            if (response.status === 400) {
+                throw new Error('Could not user info');
+            }
+
+            dispatch(updateInfoSuccess(response.info));
+        } catch (error) {
+            dispatch(updateInfoFailure(error.message));
+        }
+    };
+};
+
+export { login, register, logout, getInfo, updateInfo };

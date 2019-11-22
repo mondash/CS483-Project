@@ -51,7 +51,7 @@ const updateUser = async (req, res) => {
     }
     try {
         const updatedUser = await req.user.save();
-        return res.status(200).json(updatedUser);
+        return res.status(200).json({ info: updatedUser });
     } catch (error) {
         return res.status(400).json({ message: error.message });
     }

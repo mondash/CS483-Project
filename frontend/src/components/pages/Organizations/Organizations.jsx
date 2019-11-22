@@ -59,7 +59,7 @@ export default () => {
                 </span>
                 <span className="GridElement">
                     <a href="https://genesishockey.com/" target="_blank" rel="noopener noreferrer">
-                        <img src="./GENESIS.png" alt="GENESIS" className="logo" />
+                        <img src="./GENESIS.jpg" alt="GENESIS" className="logo" />
                     </a>
                     <p>
                         Created to expand the player development for ice hockey. Strongly focusing

@@ -1,5 +1,11 @@
+@import '~Shared/Form';
+
 .AccountInfo {
     span {
+        text {
+            display: inline-block;
+        }
+
         display: block;
         padding: 1em;
     }

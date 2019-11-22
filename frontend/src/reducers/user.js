@@ -41,7 +41,8 @@ export default (state = initialState, action) => {
                 ...state,
                 loading: false,
                 error: null,
-                accessToken: action.accessToken
+                accessToken: action.accessToken,
+                isAuthenticated: true
             };
         case 'REGISTER_FAILURE':
             return {
@@ -74,6 +75,26 @@ export default (state = initialState, action) => {
                 }
             };
         case 'GET_INFO_ERROR':
+            return {
+                ...state,
+                loading: false,
+                error: action.error
+            };
+        case 'UPDATE_INFO_INIT':
+            return {
+                ...state,
+                loading: true
+            };
+        case 'UPDATE_INFO_SUCCESS':
+            return {
+                ...state,
+                loading: false,
+                error: null,
+                info: {
+                    ...action.info
+                }
+            };
+        case 'UPDATE_INFO_ERROR':
             return {
                 ...state,
                 loading: false,

@@ -35,6 +35,19 @@ export default () => {
                     to basic skills level skaters.
                 </li>
             </ul>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            <img className="images" src="./hockeysession.jpg" alt="hockey" />
+                        </th>
+                        <th>
+                            <img className="images" src="./iceskates.jpg" alt="skates" />
+                        </th>
+                    </tr>
+                </thead>
+            </table>
             <h1>Sessions</h1>
             <table className="SessionTable">
                 <thead>
@@ -180,7 +193,6 @@ export default () => {
                             <br />
                             9:45 AM - 10:45 AM Purple
                         </td>
-                        <td></td>
                     </tr>
                 </tbody>
             </table>

@@ -26,7 +26,8 @@ class Registration extends React.Component {
             name: null,
             email: null,
             password: null,
-            passwordCheck: null
+            passwordCheck: null,
+            passwordError: null
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -39,17 +40,23 @@ class Registration extends React.Component {
         });
     }
 
-    async handleSubmit(event) {
+    handleSubmit(event) {
         event.preventDefault();
 
         // TODO validations
         const { register } = this.props;
         const { name, email, password, passwordCheck } = this.state;
+
+        if (password !== passwordCheck) {
+            this.setState({ passwordError: 'Passwords do not match' });
+            return;
+        }
+        this.setState({ passwordError: null });
+
         const payload = {
             name,
             email,
-            password,
-            passwordCheck
+            password
         };
 
         register(payload);
@@ -57,6 +64,7 @@ class Registration extends React.Component {
 
     render() {
         const { error, isAuthenticated } = this.props;
+        const { passwordError } = this.state;
 
         if (isAuthenticated) return <Redirect to="/" />;
 
@@ -93,6 +101,7 @@ class Registration extends React.Component {
                         onChange={this.handleChange}
                     />
                     <div className="error">{error}</div>
+                    <div className="error">{passwordError}</div>
                     <button>Register</button>
                     <div className="separator">
                         <hr />

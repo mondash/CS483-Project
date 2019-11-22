@@ -15,6 +15,15 @@ export default () => (
             <li>Sunday - 11:00 AM to 5:00 PM</li>
         </ul>
         <br />
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <img className="fitness" src="./fitnesscenter.jpg" alt="fitness" />
+                    </th>
+                </tr>
+            </thead>
+        </table>
         <h2>Price</h2>
         <ul className="hours">
             <li>$20.00 per month</li>
